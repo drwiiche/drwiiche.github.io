@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Academic Metadata -->
+  <title>Brahim El Mouden - Software Developer, Network Engineer & ML Practitioner</title>
+  <meta name="description" content="Academic portfolio and resume of Brahim El Mouden. Focuses on Android App development, Machine Learning / Deep Learning systems, and self-hosted networks.">
+  <meta name="keywords" content="Brahim El Mouden, Academic Resume, Machine Learning Engineer, WISP Network, Tiznit, Morocco, Android Developer, Java, Kotlin, TensorFlow, Keras, Python, Docker, VPS">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Brahim El Mouden - Academic Resume & Portfolio">
+  <meta property="og:description" content="Android developer, ML practitioner, and network systems engineer based in Tiznit, Morocco.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://drwiiche.github.io/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/7033554?v=4">
+  
+  <!-- Styling -->
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="academic-grid">
+
+      <!-- ==========================================================================
+           LEFT COLUMN: SIDEBAR
+           ========================================================================== -->
+      <aside class="sidebar">
+        <div class="profile-avatar-container">
+          <img src="https://avatars.githubusercontent.com/u/7033554?v=4" alt="Brahim El Mouden" class="profile-avatar">
+        </div>
+        
+        <div class="profile-info">
+          <h1 class="profile-name">Brahim El Mouden</h1>
+          <div class="profile-title-typing">
+            <span id="typewriter"></span>
+          </div>
+        </div>
+
+        <p class="profile-bio">
+          Software Developer, Network Engineer, & Machine Learning practitioner operating at the intersection of wireless networks, server virtualization, and predictive modeling.
+        </p>
+
+        <!-- Sidebar contact details -->
+        <ul class="sidebar-contact-list">
+          <li class="contact-item">
+            <i data-lucide="map-pin"></i>
+            <span>Tiznit, Morocco</span>
+          </li>
+          <li class="contact-item">
+            <i data-lucide="mail"></i>
+            <span><a href="mailto:brahim.elmouden@outlook.com">brahim.elmouden@outlook.com</a></span>
+          </li>
+          <li class="contact-item">
+            <i data-lucide="github"></i>
+            <span><a href="https://github.com/drwiiche" target="_blank" rel="noopener">github.com/drwiiche</a></span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- ==========================================================================
+           RIGHT COLUMN: MAIN CONTENT
+           ========================================================================== -->
+      <main class="main-content">
+
+        <!-- Short Professional Summary -->
+        <section>
+          <h2>About Me</h2>
+          <p style="font-size: 0.95rem; line-height: 1.6;">
+            I design and manage a localized **Wireless Internet Service Provider (WISP)** network in Tiznit, Morocco, delivering secure connectivity to dynamic client stations. On the systems side, I orchestrate local server virtualization using **Docker** and reverse proxy layers. As a software developer, I publish mobile tools (100k+ downloads) and build models across text, graph, and time-series domains using **TensorFlow & Scikit-learn**.
+          </p>
+        </section>
+
+        <!-- WISP Network interactive visualizer (collapsible component) -->
+        <section class="visualizer-card">
+          <button class="visualizer-toggle-btn" id="visualizer-toggle">
+            <span><i data-lucide="network" style="width: 15px; height: 15px; display: inline-block; vertical-align: middle; margin-right: 0.4rem; color: var(--accent-cyan);"></i> View Interactive WISP Network topology</span>
+            <i data-lucide="chevron-down" id="toggle-icon" style="width: 14px; height: 14px;"></i>
+          </button>
+
+          <div class="visualizer-content" id="visualizer-content">
+            <!-- SVG Topology Graph -->
+            <div class="visualizer-container">
+              <svg class="network-svg" viewBox="0 0 500 300">
+                <!-- Concentric Signal Waves propagation -->
+                <circle cx="250" cy="150" r="10" class="signal-wave"></circle>
+                <circle cx="250" cy="150" r="10" class="signal-wave"></circle>
+                
+                <!-- Links -->
+                <path id="path-core-ap" d="M 100 150 L 250 150" class="net-link active" />
+                <path id="path-ap-c1" d="M 250 150 L 380 70" class="net-link active" />
+                <path id="path-ap-c2" d="M 250 150 L 420 130" class="net-link active" />
+                <path id="path-ap-c3" d="M 250 150 L 390 200" class="net-link active" />
+                <path id="path-ap-c4" d="M 250 150 L 430 250" class="net-link active" />
+
+                <!-- Running packets -->
+                <circle r="3" class="packet-violet">
+                  <animateMotion dur="3s" repeatCount="indefinite">
+                    <mpath href="#path-core-ap" />
+                  </animateMotion>
+                </circle>
+                <circle r="2" class="packet">
+                  <animateMotion dur="2.5s" repeatCount="indefinite">
+                    <mpath href="#path-ap-c1" />
+                  </animateMotion>
+                </circle>
+                <circle r="2" class="packet">
+                  <animateMotion dur="4.2s" repeatCount="indefinite">
+                    <mpath href="#path-ap-c2" />
+                  </animateMotion>
+                </circle>
+                <circle r="2" class="packet">
+                  <animateMotion dur="3.5s" repeatCount="indefinite">
+                    <mpath href="#path-ap-c3" />
+                  </animateMotion>
+                </circle>
+                <circle r="2" class="packet">
+                  <animateMotion dur="5s" repeatCount="indefinite">
+                    <mpath href="#path-ap-c4" />
+                  </animateMotion>
+                </circle>
+
+                <!-- Nodes -->
+                <circle id="core-router" cx="100" cy="150" r="9" class="net-node net-node-core" />
+                <circle id="pharos-ap" cx="250" cy="150" r="8" class="net-node net-node-pharos" />
+                <circle id="client-cpe-1" cx="380" cy="70" r="5" class="net-node net-node-client" />
+                <circle id="client-cpe-2" cx="420" cy="130" r="5" class="net-node net-node-client" />
+                <circle id="client-cpe-3" cx="390" cy="200" r="5" class="net-node net-node-client" />
+                <circle id="client-cpe-4" cx="430" cy="250" r="5" class="net-node net-node-client" />
+
+                <!-- Labels -->
+                <text x="100" y="134" fill="#6d28d9" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle">Core Router</text>
+                <text x="250" y="134" fill="#0284c7" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle">Pharos AP</text>
+                <text x="390" y="58" fill="#64748b" font-family="'JetBrains Mono'" font-size="7">CPE-1 (West)</text>
+                <text x="430" y="120" fill="#64748b" font-family="'JetBrains Mono'" font-size="7">CPE-2 (S-East)</text>
+                <text x="400" y="190" fill="#64748b" font-family="'JetBrains Mono'" font-size="7">CPE-3 (North)</text>
+                <text x="440" y="240" fill="#64748b" font-family="'JetBrains Mono'" font-size="7">CPE-4 (Valley)</text>
+              </svg>
+            </div>
+
+            <!-- Diagnostics -->
+            <div class="visualizer-details">
+              <div class="details-card">
+                <div class="details-header">
+                  <i data-lucide="activity" style="width: 16px; height: 16px;"></i>
+                  <h4 id="details-title" style="font-size: 0.95rem; font-weight: 700;">Querying node...</h4>
+                </div>
+                <p id="details-desc" style="font-size: 0.8rem; margin-bottom: 0.5rem; color: var(--text-secondary);">
+                  Click elements in the network to inspect live bandwidth allocation and ping latency.
+                </p>
+                <div class="details-grid" id="details-grid">
+                  <!-- JS populated -->
+                </div>
+              </div>
+
+              <!-- Telemetry -->
+              <div class="diagnostic-console">
+                <div id="console-body">
+                  <!-- Syslogs -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section Title -->
+        <section>
+          <h2>Projects & Research</h2>
+          
+          <!-- Category tabs -->
+          <nav class="portfolio-nav">
+            <button class="nav-btn active" data-filter="all">All</button>
+            <button class="nav-btn" data-filter="android">Apps</button>
+            <button class="nav-btn" data-filter="ai">AI / ML</button>
+            <button class="nav-btn" data-filter="web">Web & Games</button>
+            <button class="nav-btn" data-filter="systems">Networks & Systems</button>
+          </nav>
+
+          <!-- List of Resume Entries -->
+          <div id="portfolio-list">
+
+            <!-- PROJECT: Internet Speed Meter -->
+            <article class="resume-entry android">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <img src="https://play-lh.googleusercontent.com/YZwPdcaZWjXb6SiDK1nPtiI0n3mmoC03iA5J3aIA7UIfeHDnQVToiNnU0rfEsU4H462Lbest9UrTWgHFh3At=s180-rw" alt="Internet Speed Meter Icon" class="entry-icon">
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Internet Speed Meter</h3>
+                    <span class="entry-role">Lead Mobile Developer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">Android App</span>
+              </div>
+              <div class="entry-desc">
+                High-performance network tracking utility designed to monitor and display active connection telemetry inside the system notification register.
+                <ul>
+                  <li>Renders active download/upload telemetry directly inside the device status bar.</li>
+                  <li>Tracks Wifi vs Mobile connection data history dynamically, maintaining local records.</li>
+                  <li>Implements optimized battery-friendly background task polling to prevent OS throttling.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">Android SDK</span>
+                <span class="tech-badge">SQLite</span>
+                <span class="tech-badge">Broadcast Receivers</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">Background Service Polling</span>
+                <span class="technique-badge">System Overlay Notifications</span>
+                <span class="technique-badge">Local Database Logging</span>
+              </div>
+              <div class="entry-links">
+                <a href="https://play.google.com/store/apps/details?id=com.iqraa.internetspeedmeter" target="_blank" rel="noopener" class="entry-link">
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Google Play Store
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT: Calculator Vault -->
+            <article class="resume-entry android">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <img src="https://play-lh.googleusercontent.com/i9F4I9mTDXC7QVa-V7s-1nZjFYZcCpl69xzGQLScOFdX58mjpsU-_2LIw8m8vgUYNRztvzoqn3rDkzeOhMVgNng=s180-rw" alt="Calculator Vault Icon" class="entry-icon">
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Calculator Vault - Hide Photos</h3>
+                    <span class="entry-role">Lead Security App Architect</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">Android App</span>
+              </div>
+              <div class="entry-desc">
+                Security-focused storage vault masquerading behind a fully functional calculator interface.
+                <ul>
+                  <li>Encrypts local media storage layers dynamically, bypassing default device gallery indexes.</li>
+                  <li>Triggers intrusion monitoring logs (capturing device snapshots on invalid entry submissions).</li>
+                  <li>Applies device-level masking, hiding launcher components from active application lists.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge">Kotlin</span>
+                <span class="tech-badge">Android Jetpack</span>
+                <span class="tech-badge">Room Database</span>
+                <span class="tech-badge">Crypto APIs</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">AES-256 Media Encryption</span>
+                <span class="technique-badge">Biometric Access APIs</span>
+                <span class="technique-badge">App Component Masking</span>
+              </div>
+              <div class="entry-links">
+                <a href="https://play.google.com/store/apps/details?id=com.iqraa.vault.calculator.lock.hide.photos" target="_blank" rel="noopener" class="entry-link">
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Google Play Store
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT: Quora Question Pair Similarity -->
+            <article class="resume-entry ai">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-violet);">
+                    <i data-lucide="copy-check"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Quora Question Pair Similarity</h3>
+                    <span class="entry-role">Machine Learning Engineer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">AI / NLP</span>
+              </div>
+              <div class="entry-desc">
+                Natural Language Processing binary classifier engineered to recognize duplicate questions to prevent semantic text redundancy.
+                <ul>
+                  <li>Extracted text similarity attributes including TF-IDF metrics, fuzzy ratios, and overlap statistics.</li>
+                  <li>Calculated cosine distance parameters across question pairs to identify sentence equivalence.</li>
+                  <li>Optimized binary XGBoost classifiers to classify matching pairs, lowering search redundancy.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge violet">Python</span>
+                <span class="tech-badge violet">NLTK</span>
+                <span class="tech-badge violet">Scikit-learn</span>
+                <span class="tech-badge violet">XGBoost</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">Fuzzy String Matching</span>
+                <span class="technique-badge">TF-IDF Vectorization</span>
+                <span class="technique-badge">Cosine Similarity Distance</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: Personalized Cancer Diagnosis -->
+            <article class="resume-entry ai">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-violet);">
+                    <i data-lucide="dna"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Personalized Cancer Diagnosis</h3>
+                    <span class="entry-role">Machine Learning Engineer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">AI / Clinical NLP</span>
+              </div>
+              <div class="entry-desc">
+                Classification model designed to categorize genetic mutation patterns based on scientific literature text summaries.
+                <ul>
+                  <li>Processed dense clinical paper texts, linking genetic patterns with target medical classes.</li>
+                  <li>Designed custom text sanitizers and high-dimensional TF-IDF pipelines to extract text features.</li>
+                  <li>Optimized multi-class Logistic Regression algorithms using log-loss evaluation statistics.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge violet">Python</span>
+                <span class="tech-badge violet">Scikit-learn</span>
+                <span class="tech-badge violet">NLTK</span>
+                <span class="tech-badge violet">Pandas</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">Clinical Text Tokenization</span>
+                <span class="technique-badge">Log-Loss Tuning</span>
+                <span class="technique-badge">TF-IDF Feature Mapping</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: Facebook Friend Recommendation -->
+            <article class="resume-entry ai">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-violet);">
+                    <i data-lucide="share-2"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Facebook Friend Recommendation</h3>
+                    <span class="entry-role">Machine Learning Engineer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">AI / Graph Mining</span>
+              </div>
+              <div class="entry-desc">
+                Graph link prediction system identifying missing edges on large-scale social network maps.
+                <ul>
+                  <li>Engineered graph metrics including PageRank, Adamic-Adar index, Jaccard similarity, and HITS scores.</li>
+                  <li>Decomposed link structures using SVD matrix operations to represent low-dimensional graph nodes.</li>
+                  <li>Trained classifier configurations using XGBoost to predict probable future connection recommendation lists.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge violet">Python</span>
+                <span class="tech-badge violet">NetworkX</span>
+                <span class="tech-badge violet">Scikit-learn</span>
+                <span class="tech-badge violet">XGBoost</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">Graph Node Link Prediction</span>
+                <span class="technique-badge">SVD Matrix Decomposition</span>
+                <span class="technique-badge">Adamic-Adar / PageRank</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: NYC Taxi Demand Prediction -->
+            <article class="resume-entry ai">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-violet);">
+                    <i data-lucide="car"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">NYC Taxi Demand Prediction</h3>
+                    <span class="entry-role">Machine Learning Engineer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">AI / Time-Series</span>
+              </div>
+              <div class="entry-desc">
+                Spatio-temporal regression model forecasting local passenger pick-up demand across NYC coordinate clusters.
+                <ul>
+                  <li>Clustered geographical sectors dynamically using K-Means spatial coordinate clustering.</li>
+                  <li>Formed rolling lag variables to capture time-series and seasonal demand frequency.</li>
+                  <li>Trained regression networks using Random Forests and XGBoost models to predict pickup densities.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge violet">Python</span>
+                <span class="tech-badge violet">Scikit-learn</span>
+                <span class="tech-badge violet">XGBoost</span>
+                <span class="tech-badge violet">K-Means</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">Spatial Cluster Segmentation</span>
+                <span class="technique-badge">Temporal Demand Modeling</span>
+                <span class="technique-badge">Time-Series Regression</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: StackOverflow Tag Predictor -->
+            <article class="resume-entry ai">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-violet);">
+                    <i data-lucide="tags"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">StackOverflow Tag Predictor</h3>
+                    <span class="entry-role">Machine Learning Engineer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">AI / Multi-Label NLP</span>
+              </div>
+              <div class="entry-desc">
+                Multi-label text classification classifier designed to auto-assign tech tags based on questions textual content.
+                <ul>
+                  <li>Designed tag mapping pipelines based on Binary Relevance and SGDClassifier methods.</li>
+                  <li>Extracted structural features from combined conversational text and markdown code blocks.</li>
+                  <li>Configured training models using TF-IDF n-grams to label multi-target profiles.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge violet">Python</span>
+                <span class="tech-badge violet">Scikit-learn</span>
+                <span class="tech-badge violet">TF-IDF</span>
+                <span class="tech-badge violet">SGDClassifier</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">Multi-Label Classification</span>
+                <span class="technique-badge">Binary Relevance Method</span>
+                <span class="technique-badge">TF-IDF Text Parsing</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: Microsoft Malware Detection -->
+            <article class="resume-entry ai">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-violet);">
+                    <i data-lucide="shield-alert"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Microsoft Malware Detection</h3>
+                    <span class="entry-role">Machine Learning Engineer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">AI / Classification</span>
+              </div>
+              <div class="entry-desc">
+                Classification system evaluating node telemetry states to predict probability of machine malware infections.
+                <ul>
+                  <li>Managed scaling operations on high-dimensional device logs and hardware parameter registers.</li>
+                  <li>Structured model parameters to handle target class imbalance distributions.</li>
+                  <li>Implemented decision architectures utilizing LightGBM and XGBoost, sorting node correlations.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge violet">Python</span>
+                <span class="tech-badge violet">LightGBM</span>
+                <span class="tech-badge violet">XGBoost</span>
+                <span class="tech-badge violet">Random Forest</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">High-Dimensional Feature Map</span>
+                <span class="technique-badge">Imbalanced Class Training</span>
+                <span class="technique-badge">Gradient-Boosted Decision Trees</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: Self-Driving Car Simulation -->
+            <article class="resume-entry ai">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-violet);">
+                    <i data-lucide="navigation"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Self-Driving Car Simulation</h3>
+                    <span class="entry-role">Deep Learning Engineer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">AI / Computer Vision</span>
+              </div>
+              <div class="entry-desc">
+                Autonomous steering engine leveraging behavioral cloning strategies to direct vehicles around course maps.
+                <ul>
+                  <li>Cloned NVIDIA autonomous models using an end-to-end Convolutional Neural Network (CNN).</li>
+                  <li>Designed image augmentation sets including Hue modifications, shifts, and horizontal flips.</li>
+                  <li>Integrated model parameters to issue steering predictions dynamically in simulator environments.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge violet">Python</span>
+                <span class="tech-badge violet">TensorFlow</span>
+                <span class="tech-badge violet">Keras</span>
+                <span class="tech-badge violet">OpenCV</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">NVIDIA CNN Behavioral Cloning</span>
+                <span class="technique-badge">Real-Time Image Augmentation</span>
+                <span class="technique-badge">Computer Vision Preprocessing</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: Human Activity Recognition (HAR) -->
+            <article class="resume-entry ai">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-violet);">
+                    <i data-lucide="smartphone"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Human Activity Recognition (HAR)</h3>
+                    <span class="entry-role">Time-Series Analyst</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">AI / Time-Series</span>
+              </div>
+              <div class="entry-desc">
+                Classification system processing temporal smartphone coordinates to classify client activity configurations.
+                <ul>
+                  <li>Modeled time-series coordinate telemetry using Long Short-Term Memory (LSTM) models.</li>
+                  <li>Structured filters to clean accelerometer/gyroscope signals and run Fourier transformations.</li>
+                  <li>Processed coordinate flows into temporal slices to train deep multi-class classification networks.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge violet">Python</span>
+                <span class="tech-badge violet">TensorFlow</span>
+                <span class="tech-badge violet">Keras</span>
+                <span class="tech-badge violet">NumPy / Pandas</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">Recurrent LSTM Networks</span>
+                <span class="technique-badge">Signal Preprocessing Filters</span>
+                <span class="technique-badge">Fourier Transform Spectral Map</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: Music Generation using Deep Learning -->
+            <article class="resume-entry ai">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-violet);">
+                    <i data-lucide="music"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Music Generation using Deep Learning</h3>
+                    <span class="entry-role">Deep Learning Practitioner</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">AI / Generative Model</span>
+              </div>
+              <div class="entry-desc">
+                Generative recurrent network modeling piano themes to compose original classical music MIDI sequences.
+                <ul>
+                  <li>Transcoded musical notes and chord changes into dynamic categorical indexes using Music21.</li>
+                  <li>Engineered sequence prediction systems utilizing stacked Recurrent LSTM layers.</li>
+                  <li>Configured generation parameters using temperature sampling methods to regulate output creativity.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge violet">Python</span>
+                <span class="tech-badge violet">TensorFlow</span>
+                <span class="tech-badge violet">Keras</span>
+                <span class="tech-badge violet">Music21</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">Sequential Recurrent Models</span>
+                <span class="technique-badge">MIDI File Tokenization</span>
+                <span class="technique-badge">Temperature-guided Composition</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: Solitaire Classic -->
+            <article class="resume-entry web">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-amber);">
+                    <i data-lucide="gamepad-2"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Solitaire Classic</h3>
+                    <span class="entry-role">Game Developer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">Web Game</span>
+              </div>
+              <div class="entry-desc">
+                Lightweight card game published on Facebook Instant Games, optimized for instant load times and fast canvas redraw cycles.
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge amber">HTML5</span>
+                <span class="tech-badge amber">Javascript (ES6)</span>
+                <span class="tech-badge amber">CSS3 Canvas</span>
+                <span class="tech-badge amber">FB Instant SDK</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">UI Canvas Redraw Loop</span>
+                <span class="technique-badge">Instant Preload Cache</span>
+                <span class="technique-badge">State Management Routing</span>
+              </div>
+              <div class="entry-links">
+                <a href="https://drwiiche.github.io/privacy/" class="entry-link">
+                  <i data-lucide="shield-alert" style="width: 14px; height: 14px;"></i> Game Privacy Policy
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT: Local WISP Ecosystem -->
+            <article class="resume-entry systems">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-cyan);">
+                    <i data-lucide="wifi"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Local WISP Network Ecosystem</h3>
+                    <span class="entry-role">WISP Network Engineer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">Network Systems</span>
+              </div>
+              <div class="entry-desc">
+                Wireless distribution network deploying localized internet routing links to client communities in Tiznit, Morocco.
+                <ul>
+                  <li>Configured sector arrays (TP-Link Pharos CPE series) to establish line-of-sight wireless paths.</li>
+                  <li>Optimized bandwidth queues (QoS) and bridge filtering policies inside MikroTik RouterOS cores.</li>
+                  <li>Maintained automated link diagnostic scripts and localized DNS routing optimization rules.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge">RouterOS (MikroTik)</span>
+                <span class="tech-badge">Pharos CPE (TP-Link)</span>
+                <span class="tech-badge">Python API</span>
+                <span class="tech-badge">OSPF</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">Simple Bandwidth Queues (QoS)</span>
+                <span class="technique-badge">Line-of-Sight RF Propagation</span>
+                <span class="technique-badge">MAC Bridge Isolation Filtering</span>
+              </div>
+            </article>
+
+            <!-- PROJECT: Self-Hosted Home VPS Containerization -->
+            <article class="resume-entry systems">
+              <div class="entry-header">
+                <div class="entry-title-block">
+                  <div class="entry-icon" style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; color: var(--accent-cyan);">
+                    <i data-lucide="container"></i>
+                  </div>
+                  <div class="entry-text-block">
+                    <h3 class="entry-title">Self-Hosted Home VPS Containerization</h3>
+                    <span class="entry-role">Systems Virtualization Engineer</span>
+                  </div>
+                </div>
+                <span class="entry-category-badge">Systems & Virtualization</span>
+              </div>
+              <div class="entry-desc">
+                Docker-orchestrated local server setup containerizing applications, reverse-proxy structures, and system configurations.
+                <ul>
+                  <li>Containerized local utility tools, databases, and microservices using Docker and Docker Compose.</li>
+                  <li>Configured Nginx Reverse Proxy routing layers to secure local ports and configure routing rules.</li>
+                  <li>Orchestrated telemetry monitors to inspect container logs, health status, and CPU thresholds.</li>
+                </ul>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Tech Stack:</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Docker Compose</span>
+                <span class="tech-badge">Linux (Ubuntu)</span>
+                <span class="tech-badge">Nginx Proxy</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge-label">Techniques:</span>
+                <span class="technique-badge">App Container Isolation</span>
+                <span class="technique-badge">Reverse Proxy Routing</span>
+                <span class="technique-badge">Docker Bridge Networking</span>
+              </div>
+              <div class="entry-links">
+                <a href="https://www.readyserver.sg/blog/docker-on-vps-beginners-guide-containerizing-first-app/" target="_blank" rel="noopener" class="entry-link">
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Virtualization Workflow Brief
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section>
+          <h2>Technical Skills</h2>
+          <div class="skills-section">
+            
+            <div class="skills-card">
+              <h3><i data-lucide="smartphone"></i> Android & Mobile</h3>
+              <div class="skills-list">
+                <span class="skill-chip">Kotlin</span>
+                <span class="skill-chip">Java</span>
+                <span class="skill-chip">Android SDK</span>
+                <span class="skill-chip">Jetpack Compose</span>
+                <span class="skill-chip">Room DB</span>
+                <span class="skill-chip">SQLite</span>
+                <span class="skill-chip">Unity (C#)</span>
+              </div>
+            </div>
+            
+            <div class="skills-card">
+              <h3><i data-lucide="brain"></i> AI & Deep Learning</h3>
+              <div class="skills-list">
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">TensorFlow</span>
+                <span class="skill-chip">Keras</span>
+                <span class="skill-chip">Scikit-learn</span>
+                <span class="skill-chip">NetworkX</span>
+                <span class="skill-chip">LightGBM</span>
+                <span class="skill-chip">OpenCV</span>
+                <span class="skill-chip">Pandas / NumPy</span>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <h3><i data-lucide="server"></i> Networks & Systems</h3>
+              <div class="skills-list">
+                <span class="skill-chip">Docker / Compose</span>
+                <span class="skill-chip">Linux (Ubuntu)</span>
+                <span class="skill-chip">Nginx Proxy</span>
+                <span class="skill-chip">MikroTik RouterOS</span>
+                <span class="skill-chip">Pharos OS</span>
+                <span class="skill-chip">QoS / Bridge Filters</span>
+                <span class="skill-chip">OSPF Routing</span>
+              </div>
+            </div>
+
+            <div class="skills-card">
+              <h3><i data-lucide="code"></i> Web & Languages</h3>
+              <div class="skills-list">
+                <span class="skill-chip">HTML5 / CSS3</span>
+                <span class="skill-chip">Javascript (ES6)</span>
+                <span class="skill-chip">Canvas API</span>
+                <span class="skill-chip">FB Instant SDK</span>
+                <span class="skill-chip">Git / GitHub</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-copyright">
+              &copy; 2026 Brahim El Mouden. All rights reserved.
+            </div>
+            <div class="footer-links">
+              <a href="https://drwiiche.github.io/privacy/">Solitaire Privacy Policy</a>
+              <a href="https://drwiiche.github.io/arachno-mech-privacy/">Arachno Mech Privacy Policy</a>
+            </div>
+          </div>
+        </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/portfolio.js"></script>
+  <script>
+    // Initialize Lucide icons
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
