@@ -7,13 +7,13 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Dr. Test Account"
+title                    : "Brahim El Mouden"
 title_separator          : "-"
-name                     : &name "Dr. Test Account"
-description              : &description "Research scientist at Test University"
+name                     : &name "Brahim El Mouden"
+description              : &description "Software Developer, Network Engineer & Entrepreneur"
 url                      : https://drwiiche.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "getorg-testacct.github.io"
+baseurl                  : "" # the subpath of your site, e.g./blog"
+repository               : "drwiiche/drwiiche.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -77,12 +77,12 @@ analytics:
 
 # Site Author
 author:
-  name             : "Dr. Test Account"
-  avatar           : "profile.png"
-  bio              : "Research scientist at Test University, expert in all things test and account related"
-  location         : "Test, California"
+  name             : "Brahim El Mouden"
+  avatar           : "profile.jpg"
+  bio              : "Software developer building cross-platform apps & social games. Network engineer running a custom local WISP ecosystem."
+  location         : "Tiznit, Morocco"
   employer         : 
-  googlescholar    : "http://scholar.google.com/this-is-a-test"
+  googlescholar    : 
   email            : 
   uri              : 
   bitbucket        :
@@ -91,19 +91,19 @@ author:
   flickr           :
   facebook         : 
   foursquare       :
-  github           : "getorg-testacct"
+  github           : "drwiiche"
   google_plus      :
   keybase          :
   instagram        : 
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/testaccount"
+  orcid            : 
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : 
   steam            :
   tumblr           :
-  twitter          : "testaccount-this-is-fake"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
@@ -248,7 +248,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Africa/Casablanca
 
 
 # Plugins
@@ -268,36 +268,15 @@ whitelist:
 
 
 # Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
 
 
 # HTML Compression
-# - http://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
