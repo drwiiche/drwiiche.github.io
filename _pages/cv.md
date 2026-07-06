@@ -31,11 +31,13 @@ Highly technical Software Developer, Network Engineer, and Machine Learning prac
 *   Engineered **Internet Speed Meter** utilizing background service workers to pull bandwidth speed and log daily data metrics inside local SQLite database.
 *   Designed **Calculator Vault** employing AES-256 local file encryption algorithms, masking directories, and capturing intrusion snapshots on invalid credentials.
 
-### **WISP Network Engineer & Founder**
+### **Senior Network Architect & WISP Operations Founder**
 *Local Community Network, Tiznit, Morocco* | *2022 - Present*
-*   Designed, deployed, and maintain a local Wireless Internet Service Provider network connecting **140+ active subscriber nodes**.
-*   Configured core bandwidth allocation (QoS simple queues), dynamic routing parameters (OSPF), and client isolation rules (bridge filters) inside **MikroTik RouterOS**.
-*   Designed outdoor RF line-of-sight networks leveraging high-gain **TP-Link Pharos (CPE610/CPE510)** client sector antennas.
+*   Architected and currently manage a localized Wireless Internet Service Provider (WISP) distribution network serving **140+ active concurrent subscribers** across geographically dispersed zones.
+*   Engineered a high-performance Layer 3 routing backbone utilizing dynamic routing protocols (**OSPF multi-area**) to achieve rapid path convergence and optimal route aggregation.
+*   Designed and configured granular traffic engineering parameters, applying **Hierarchical Token Bucket (HTB) Queuing** and **QoS queues** in **MikroTik RouterOS** to regulate bandwidth allocation under high contention ratios.
+*   Hardened Layer 2 security by programming MAC bridge filters, static ARP table bindings, PPPoE authentication tunnels, and strict client isolation policies to mitigate DHCP spoofing, ARP cache poisoning, and internal pivoting.
+*   Deployed outdoor point-to-multipoint (PtMP) RF backhaul paths using high-gain **TP-Link Pharos (CPE610/CPE510)** sector arrays, auditing path loss profiles, Fresnel zone clearances, and RSSI metrics.
 
 ### **Systems & Virtualization Engineer**
 *Self-Hosted Infrastructure* | *2023 - Present*
