@@ -32,4 +32,4 @@ collection: portfolio
 ---
 
 ## Links & References
-*   **Privacy Policy:** [Solitaire Classic Game Privacy Policy](https://drwiiche.github.io/privacy/)
+*   **Privacy Policy:** [Solitaire Classic Game Privacy Policy](https://brahimelmouden.com/privacy/)

@@ -36,4 +36,4 @@ We may update this policy periodically. We encourage you to review this page to 
 
 ## 7. Contact Us
 If you have any questions or concerns regarding this Privacy Policy for **Solitaire Classic**, please contact us:
-*   **Developer Page:** [https://drwiiche.github.io/](https://drwiiche.github.io/)
+*   **Developer Page:** [https://brahimelmouden.com/](https://brahimelmouden.com/)
