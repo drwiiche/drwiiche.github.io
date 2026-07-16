@@ -42,4 +42,4 @@ We may amend our privacy policy from time to time by posting the amended policy 
 
 ## 9. Contact Us
 If you have any questions or concerns regarding this Privacy Policy for **Arachno Mech: Car Transform**, please contact us via our developer platform:
-*   **Website:** [https://brahimelmouden.com/](https://brahimelmouden.com/)
+*   **Website:** [https://www.brahimelmouden.com/](https://www.brahimelmouden.com/)

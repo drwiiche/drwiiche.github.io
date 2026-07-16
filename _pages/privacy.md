@@ -36,4 +36,4 @@ We may update this policy periodically. We encourage you to review this page to 
 
 ## 7. Contact Us
 If you have any questions or concerns regarding this Privacy Policy for **Solitaire Classic**, please contact us:
-*   **Developer Page:** [https://brahimelmouden.com/](https://brahimelmouden.com/)
+*   **Developer Page:** [https://www.brahimelmouden.com/](https://www.brahimelmouden.com/)
