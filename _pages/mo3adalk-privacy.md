@@ -71,5 +71,6 @@ We may update our Privacy Policy periodically to reflect app updates, new educat
 If you have questions, feedback, or suggestions regarding this Privacy Policy or the Mo3adalk application, please contact us:
 
 * **Publisher:** iqraa
+* **Google Play Store:** [Mo3adalk on Google Play Store](https://play.google.com/store/apps/details?id=hisab.mo3adal.bac)
 * **Developer Website:** [https://www.brahimelmouden.com/](https://www.brahimelmouden.com/)
 * **Support Email:** [contact@mo3adalk.ma](mailto:contact@mo3adalk.ma)

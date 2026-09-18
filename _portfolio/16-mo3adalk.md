@@ -50,5 +50,6 @@ Mo3adalk is designed from the ground up around student privacy:
 ---
 
 ## Links & References
+* **Google Play Store:** [Download Mo3adalk on Google Play](https://play.google.com/store/apps/details?id=hisab.mo3adal.bac)
 * **Privacy Policy:** [Mo3adalk Privacy Policy](/mo3adalk-privacy/)
 * **Publisher:** iqraa
