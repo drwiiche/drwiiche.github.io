@@ -1,0 +1,35 @@
+# Brahim El Mouden
+
+> Software Developer, Network Engineer & Machine Learning Practitioner operating at the intersection of wireless networks, server virtualization, and mobile/web software engineering. Based in Tiznit, Morocco.
+
+## Professional Summary
+Brahim El Mouden designs and operates a localized Wireless Internet Service Provider (WISP) network delivering secure high-throughput connectivity to client stations. He authors high-impact Android applications with over 100,000+ downloads on Google Play, architects containerized web platforms, and develops predictive machine learning models across text, graph, and time-series domains.
+
+## Published Platforms & Software
+
+### Web Platforms
+- **Namodaj** (https://namodaj.ma/): Morocco's largest administrative document and legal templates repository (2,000+ official forms across 35+ public and private sectors). Built with Docker, PHP 8.3 with Zend OPcache tuning, dual Word (.docx)/PDF generation pipelines, disk caching, and Generative Engine Optimization (`llms.txt`).
+- **WadifaLik** (https://wadifalik.ma/): Moroccan public sector recruitment portal and examination alerts platform. Engineered as a React 18/Vite SPA on Cloudflare Edge CDN, backed by an autonomous Python web crawler (`wadifa_bot`) and a headless Playwright/Chromium visual compositing pipeline for automated social media syndication.
+
+### Mobile Applications (Android)
+- **Mo3adalk: Moroccan GPA & Bac Simulator** (https://play.google.com/store/apps/details?id=hisab.mo3adal.bac): 100% offline-first academic GPA calculator and Baccalaureate exam simulator adhering strictly to the official Moroccan Ministry of National Education (Massar) coefficients and curricula. Built with Kotlin, Jetpack Compose, Material 3, and DataStore.
+- **NetPulse WOL: Remote PC Power**: A local-first Wake-on-LAN Android utility and subnet device discovery tool transmitting UDP Magic Packets, probing active service ports (RDP, SSH, SMB), and supporting deep-link automation.
+- **Internet Speed Meter** (https://play.google.com/store/apps/details?id=com.iqraa.internetspeedmeter): Real-time network speed monitor for Android status bars with over 100,000+ downloads.
+- **Calculator Vault** (https://play.google.com/store/apps/details?id=com.iqraa.vault.calculator.lock.hide.photos): Disguised AES-256 encrypted personal media vault.
+
+### Network Infrastructure & Systems
+- **Local WISP Broadband Distribution Network**: Wireless distribution network in Tiznit, Morocco serving 140+ concurrent subscribers using TP-Link Pharos CPE point-to-multipoint links, MikroTik RouterOS with OSPF routing, and Hierarchical Token Bucket (HTB) bandwidth queuing.
+- **Docker Virtualization & Reverse Proxy Layer**: Production container cluster running Nginx reverse proxy, automated SSL termination, and resource-isolated services.
+
+### Machine Learning & Data Science
+- Quora Question Pair Similarity (NLP duplicate question binary classifier via TF-IDF & XGBoost)
+- Personalized Cancer Diagnosis (Clinical gene mutation multi-class text classifier)
+- Facebook Friend Recommendation (Graph link prediction using PageRank, Adamic-Adar, SVD, and HITS)
+- Self-Driving Car Simulation (End-to-end CNN steering angle prediction via behavioral cloning)
+- Human Activity Recognition (Time-series accelerometer signal classification using LSTM networks)
+
+## Contact & Links
+- Website: https://www.brahimelmouden.com/
+- GitHub: https://github.com/drwiiche
+- Email: brahim_elmouden@um5.ac.ma
+- Location: Tiznit, Morocco

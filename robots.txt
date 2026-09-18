@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /favicon.ico
+Allow: /assets/
+
+User-agent: Googlebot
+Allow: /
+Allow: /images/
+Allow: /favicon.ico
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /favicon.ico
+
+Sitemap: https://www.brahimelmouden.com/sitemap.xml
